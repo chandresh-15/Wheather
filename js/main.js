@@ -3,7 +3,7 @@ let searchBtn = document.getElementById("search-btn");
 let cityRef = document.getElementById("city");
 
 async function getwheatherdata(city) {
-  var res_data = await fetch(
+  let res_data = await fetch(
     `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3d6b2d08149968bf9f07bcfaaa962586 `
   );
   var res = await res_data.json();
