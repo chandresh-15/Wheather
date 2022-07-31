@@ -4,7 +4,7 @@ let cityRef = document.getElementById("city");
 
 async function getwheatherdata(city) {
   let res_data = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3d6b2d08149968bf9f07bcfaaa962586 `
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=cad7ec124945dcfff04e457e76760d90 `
   );
   var res = await res_data.json();
   //   console.log(res);
