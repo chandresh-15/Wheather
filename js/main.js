@@ -15,7 +15,7 @@ async function getwheatherdata(city) {
     //console.log(res);
     console.log(res.weather[0].icon);
     console.log(res.weather[0].main);
-    console.log(res.weather[0].description);
+    console.log(res.weather[0].temp);
     console.log(res.name);
     console.log(res.main.temp_min);
     console.log(res.main.temp_max);
@@ -24,15 +24,19 @@ async function getwheatherdata(city) {
         <h4 class="weather">${res.weather[0].main}</h4>
         <h4 class="desc">${res.weather[0].description}</h4>
         <img src="https://openweathermap.org/img/w/${res.weather[0].icon}.png">
-        <h1>${res.main.temp} &#176;</h1>
+        <h1>${Math.round(res.main.temp - 273.15)} &#176;</h1> 
         <div class="temp-container">
             <div>
                 <h4 class="title">min</h4>
-                <h4 class="temp">${res.main.temp_min}&#176;</h4>
+                <h4 class="temp">${Math.round(
+                  res.main.temp_min - 273.15
+                )}&#176;</h4>
             </div>
             <div>
                 <h4 class="title">max</h4>
-                <h4 class="temp">${res.main.temp_max}&#176;</h4>
+                <h4 class="temp">${Math.round(
+                  res.main.temp_max - 273.15
+                )}&#176;</h4>
             </div>
         </div>
     `;
